@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'frontend.index')->name('home');
+Route::view('/details', 'frontend.details')->name('detail');
+Route::view('/chackout', 'frontend.chackout')->name('chackout');
+Route::view('/chackout-success', 'frontend.chackout-success')->name('chackout');
 
 Route::middleware([
     'auth:sanctum',
